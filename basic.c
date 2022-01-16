@@ -12,14 +12,7 @@
  * current buffer framing bad, are hard.
  */
 
-#include <sys/queue.h>
-#include <ctype.h>
-#include <limits.h>
-#include <signal.h>
-#include <stdio.h>
-#include <stdlib.h>
-
-#include "def.h"
+#include "config.h"
 
 #define percint(n1, n2)		((n1 * (int) n2) * 0.1)
 

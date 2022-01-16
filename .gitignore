@@ -1,4 +1,4 @@
-packages
+*~
 *.o
-mg
-mg-static/mg-*
+*.stamp
+/mg

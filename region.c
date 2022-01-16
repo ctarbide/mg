@@ -9,20 +9,7 @@
  * internal use.
  */
 
-#include <sys/queue.h>
-#include <sys/socket.h>
-#include <sys/types.h>
-#include <sys/wait.h>
-#include <errno.h>
-#include <fcntl.h>
-#include <poll.h>
-#include <signal.h>
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-#include <unistd.h>
-
-#include "def.h"
+#include "config.h"
 
 #define TIMEOUT 10000
 

@@ -6,12 +6,7 @@
  *		Window handling.
  */
 
-#include <sys/queue.h>
-#include <signal.h>
-#include <stdio.h>
-#include <stdlib.h>
-
-#include "def.h"
+#include "config.h"
 
 struct mgwin *
 new_window(struct buffer *bp)

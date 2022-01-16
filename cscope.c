@@ -6,21 +6,7 @@
  * Author: Sunil Nimmagadda <sunil@openbsd.org>
  */
 
-#include <sys/queue.h>
-#include <sys/stat.h>
-#include <sys/types.h>
-#include <ctype.h>
-#include <errno.h>
-#include <fcntl.h>
-#include <fnmatch.h>
-#include <limits.h>
-#include <signal.h>
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-#include <unistd.h>
-
-#include "def.h"
+#include "config.h"
 
 #define CSSYMBOL      0
 #define CSDEFINITION  1

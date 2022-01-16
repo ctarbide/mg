@@ -2,22 +2,7 @@
 
 /* This file is in the public domain */
 
-#include <sys/queue.h>
-#include <sys/types.h>
-#include <sys/wait.h>
-
-#include <ctype.h>
-#include <limits.h>
-#include <signal.h>
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-#include <time.h>
-#include <unistd.h>
-
-#include "def.h"
-#include "kbd.h"
-#include "funmap.h"
+#include "config.h"
 
 int	 globalwd = FALSE;
 static int	 compile_goto_error(int, int);

@@ -6,17 +6,7 @@
  *	File commands.
  */
 
-#include <sys/queue.h>
-#include <sys/stat.h>
-#include <errno.h>
-#include <libgen.h>
-#include <signal.h>
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-#include <unistd.h>
-
-#include "def.h"
+#include "config.h"
 
 size_t xdirname(char *, const char *, size_t);
 

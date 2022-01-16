@@ -3,14 +3,7 @@
  * This file is in the public domain
  */
 
-#include <sys/queue.h>
-#include <signal.h>
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-
-#include "def.h"
-#include "kbd.h"
+#include "config.h"
 
 #define MAX_FREE_RECORDS	32
 

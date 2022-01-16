@@ -7,14 +7,7 @@
  * parts of building the keymap has been moved to a better place.
  */
 
-#include <sys/queue.h>
-#include <signal.h>
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-
-#include "def.h"
-#include "kbd.h"
+#include "config.h"
 
 /*
  * initial keymap declarations, deepest first

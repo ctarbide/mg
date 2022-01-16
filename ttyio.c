@@ -10,27 +10,7 @@
  * buffered fashion.
  */
 
-#include <sys/ioctl.h>
-#include <sys/queue.h>
-#include <sys/time.h>
-#include <sys/types.h>
-#include <errno.h>
-#include <fcntl.h>
-#include <poll.h>
-#include <signal.h>
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-#include <term.h>
-#include <termios.h>
-
-#ifndef TCSASOFT
-#define TCSASOFT        0
-#endif
-
-#include <unistd.h>
-
-#include "def.h"
+#include "config.h"
 
 #define NOBUF	512			/* Output buffer size. */
 

@@ -10,12 +10,7 @@
  * ctype.h) don't let you ask.
  */
 
-#include <sys/queue.h>
-#include <signal.h>
-#include <stdio.h>
-#include <string.h>
-
-#include "def.h"
+#include "config.h"
 
 /*
  * This table, indexed by a character drawn

@@ -2,15 +2,7 @@
 /* this file is in the public domain */
 /* Author: Vincent Labrecque <vincent@openbsd.org>	April 2002 */
 
-#include <sys/queue.h>
-#include <fnmatch.h>
-#include <signal.h>
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-
-#include "def.h"
-#include "funmap.h"
+#include "config.h"
 
 struct autoexec {
 	SLIST_ENTRY(autoexec) next;	/* link in the linked list */

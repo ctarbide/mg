@@ -9,14 +9,7 @@
  *		Modified for MG 2a by Mic Kaczmarczik 03-Aug-1987
  */
 
-#include <sys/queue.h>
-#include <sys/stat.h>
-#include <signal.h>
-#include <stdio.h>
-#include <string.h>
-#include <unistd.h>
-
-#include "def.h"
+#include "config.h"
 
 static char	 mgcwd[NFILEN];
 

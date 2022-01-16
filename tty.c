@@ -27,16 +27,7 @@
  * rather than the assumption that scrolling region operations look better.
  */
 
-#include <sys/ioctl.h>
-#include <sys/queue.h>
-#include <sys/types.h>
-#include <sys/time.h>
-#include <signal.h>
-#include <stdio.h>
-#include <term.h>
-#include <unistd.h>
-
-#include "def.h"
+#include "config.h"
 
 static int	 charcost(const char *);
 

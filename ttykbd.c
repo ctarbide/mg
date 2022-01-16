@@ -8,14 +8,7 @@
  * Created:	22-Nov-1987 Mic Kaczmarczik (mic@emx.cc.utexas.edu)
  */
 
-#include <sys/queue.h>
-#include <signal.h>
-#include <stdio.h>
-#include <stdlib.h>
-#include <term.h>
-
-#include "def.h"
-#include "kbd.h"
+#include "config.h"
 
 /*
  * Get keyboard character.  Very simple if you use keymaps and keys files.

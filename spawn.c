@@ -7,13 +7,7 @@
  * Assumes POSIX job control.
  */
 
-#include <sys/queue.h>
-#include <signal.h>
-#include <stdio.h>
-#include <term.h>
-#include <termios.h>
-
-#include "def.h"
+#include "config.h"
 
 /*
  * This causes mg to send itself a stop signal.  It assumes the parent

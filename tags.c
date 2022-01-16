@@ -6,25 +6,7 @@
  * Author: Sunil Nimmagadda <sunil@openbsd.org>
  */
 
-#include <sys/queue.h>
-#include <sys/stat.h>
-#include <sys/tree.h>
-#include <sys/types.h>
-#include <ctype.h>
-#include <err.h>
-#include <errno.h>
-#include <signal.h>
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-#include <unistd.h>
-#if defined(LIBBSD_OVERLAY) || defined(__FreeBSD__) || defined(__DragonFly__) || defined(__GLIBC__)
-#  include <libutil.h>
-#else
-#include <util.h>
-#endif
-
-#include "def.h"
+#include "config.h"
 
 struct ctag;
 

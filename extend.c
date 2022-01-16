@@ -5,22 +5,7 @@
  *	Extended (M-x) commands, rebinding, and	startup file processing.
  */
 
-#include <sys/queue.h>
-#include <sys/types.h>
-#include <regex.h>
-#include <ctype.h>
-#include <limits.h>
-#include <signal.h>
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-
-#include "chrdef.h"
-#include "def.h"
-#include "funmap.h"
-#include "kbd.h"
-#include "key.h"
-#include "macro.h"
+#include "config.h"
 
 static int	 remap(KEYMAP *, int, PF, KEYMAP *);
 static KEYMAP	*reallocmap(KEYMAP *);

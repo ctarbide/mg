@@ -9,18 +9,7 @@
  * of the display screen. Used by the entire known universe.
  */
 
-#include <sys/queue.h>
-#include <signal.h>
-#include <stdarg.h>
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-#include <term.h>
-
-#include "def.h"
-#include "funmap.h"
-#include "key.h"
-#include "macro.h"
+#include "config.h"
 
 static char	*veread(const char *, char *, size_t, int, va_list)
 			__attribute__((__format__ (printf, 1, 0)));

@@ -1,37 +1,142 @@
-# $OpenBSD: Makefile,v 1.35 2019/07/18 05:57:48 lum Exp $
 
-PROG=	mg
+INSTALL = ./tools/install.sh
 
-LDADD+=	`pkg-config --libs ncurses` -lutil
-DPADD+=	${LIBUTIL}
+PREFIX = $(HOME)/local
+BINDIR = $(PREFIX)/bin
+LIBDIR = $(PREFIX)/lib/mg
+SHAREDIR = $(PREFIX)/share/mg
+MAN1DIR = $(PREFIX)/share/man/man1
 
-# (Common) compile-time options:
-#
-#	REGEX		-- create regular expression functions.
-#	STARTUPFILE	-- look for and handle initialization file.
-#	MGLOG		-- debug mg internals to a log file.
-#
-CFLAGS+=-Wall -DREGEX `pkg-config --cflags-only-I ncurses`
+CC = gcc
+CFLAGS = -std=c99 -g -O2 -Wall -I${HOME}/local/include
+# CFLAGS += -Werror -fmax-errors=3
+LIBS = -L${HOME}/local/lib64 -L${HOME}/local/lib
+LIBS += -lm -lncursesw -lutil
 
-SRCS=	autoexec.c basic.c bell.c buffer.c cinfo.c dir.c display.c \
-	echo.c extend.c file.c fileio.c funmap.c help.c kbd.c keymap.c \
-	line.c macro.c main.c match.c modes.c paragraph.c \
-	re_search.c region.c search.c spawn.c tty.c ttyio.c ttykbd.c \
-	undo.c util.c version.c window.c word.c yank.c
+# OPTFLAGS = -ggdb3 -O0
+OPTFLAGS = -g -O2
+WERROR = -pedantic -Werror -fmax-errors=5
+CFLAGS_QA = -std=c99 $(OPTFLAGS) \
+    -Wall -Wextra -Wstrict-prototypes -Wmissing-prototypes \
+    -Wshadow -Wconversion -Wdeclaration-after-statement \
+    -Wno-unused-parameter \
+    $(WERROR) \
+    -I${HOME}/local/include
+#CFLAGS = $(CFLAGS_QA)
 
-#
-# More or less standalone extensions.
-#
-SRCS+=	cmode.c cscope.c dired.c grep.c interpreter.c tags.c
+OBJS = \
+    autoexec.o \
+    basic.o \
+    bell.o \
+    buffer.o \
+    cinfo.o \
+    cmode.o \
+    cscope.o \
+    dir.o \
+    dired.o \
+    display.o \
+    echo.o \
+    extend.o \
+    file.o \
+    fileio.o \
+    fparseln.o \
+    funmap.o \
+    grep.o \
+    help.o \
+    interpreter.o \
+    kbd.o \
+    keymap.o \
+    line.o \
+    log.o \
+    macro.o \
+    main.o \
+    match.o \
+    modes.o \
+    paragraph.o \
+    reallocarray.o \
+    region.o \
+    re_search.o \
+    search.o \
+    spawn.o \
+    strlcat.o \
+    strlcpy.o \
+    strtonum.o \
+    tags.o \
+    tty.o \
+    ttyio.o \
+    ttykbd.o \
+    undo.o \
+    util.o \
+    version.o \
+    window.o \
+    word.o \
+    yank.o
 
-#
-# -DMGLOG source file.
-#
-#SRCS+=	log.c
+SRCS = \
+    autoexec.c \
+    basic.c \
+    bell.c \
+    buffer.c \
+    cinfo.c \
+    cmode.c \
+    cscope.c \
+    dir.c \
+    dired.c \
+    display.c \
+    echo.c \
+    extend.c \
+    file.c \
+    fileio.c \
+    fparseln.c \
+    funmap.c \
+    grep.c \
+    help.c \
+    interpreter.c \
+    kbd.c \
+    keymap.c \
+    line.c \
+    log.c \
+    macro.c \
+    main.c \
+    match.c \
+    modes.c \
+    paragraph.c \
+    reallocarray.c \
+    region.c \
+    re_search.c \
+    search.c \
+    spawn.c \
+    strlcat.c \
+    strlcpy.c \
+    strtonum.c \
+    tags.c \
+    tty.c \
+    ttyio.c \
+    ttykbd.c \
+    undo.c \
+    util.c \
+    version.c \
+    window.c \
+    word.c \
+    yank.c
 
-afterinstall:
-	${INSTALL} -d -o root -g wheel ${DESTDIR}${DOCDIR}/mg
-	${INSTALL} ${INSTALL_COPY} -o ${DOCOWN} -g ${DOCGRP} -m ${DOCMODE} \
-	    ${.CURDIR}/tutorial ${DESTDIR}${DOCDIR}/mg
+all: mg
 
-.include <bsd.prog.mk>
+.SUFFIXES: .o
+.c.o:
+	$(CC) $(CFLAGS) -o $@ -c $<
+
+mg: $(OBJS)
+	$(CC) $(CFLAGS) -o $@ $(OBJS) $(LIBS)
+
+protos.h: *.nw
+	nofake.sh -L -Rprotos -oprotos.h *.nw
+
+.PHONY: install
+install: mg mg.1 tutorial
+	$(INSTALL) -D -m 755 mg '$(BINDIR)/mg'
+	$(INSTALL) -D -m 644 tutorial '$(SHAREDIR)/tutorial'
+	$(INSTALL) -D -m 644 mg.1 '$(MAN1DIR)/mg.1'
+
+clean:
+	rm -f $(OBJS) mg

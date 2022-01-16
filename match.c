@@ -10,12 +10,7 @@
  * but there's enough overhead in the editor as it is.
  */
 
-#include <sys/queue.h>
-#include <signal.h>
-#include <stdio.h>
-
-#include "def.h"
-#include "key.h"
+#include "config.h"
 
 static int	balance(void);
 static void	displaymatch(struct line *, int);

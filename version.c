@@ -7,11 +7,7 @@
  * out by the emacs-version command.
  */
 
-#include <sys/queue.h>
-#include <signal.h>
-#include <stdio.h>
-
-#include "def.h"
+#include "config.h"
 
 const char	version[] = "Mg 2a (hboetes-20211212)";
 

@@ -6,18 +6,7 @@
  *		Buffer handling.
  */
 
-#include <sys/queue.h>
-#include <errno.h>
-#include <libgen.h>
-#include <signal.h>
-#include <stdarg.h>
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-#include <unistd.h>
-
-#include "def.h"
-#include "kbd.h"		/* needed for modes */
+#include "config.h"
 
 #define DIFFTOOL "/usr/bin/diff"
 

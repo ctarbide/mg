@@ -52,23 +52,8 @@
  *   Importantly, any lines sent to there from here will not be
  *   coming back here.
  */
-#include <sys/queue.h>
 
-#include <ctype.h>
-#include <limits.h>
-#include <regex.h>
-#include <signal.h>
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-
-#include "def.h"
-#include "funmap.h"
-
-#ifdef  MGLOG
-#include "kbd.h"
-#include "log.h"
-#endif
+#include "config.h"
 
 static int	 multiarg(char *, char *, int);
 static int	 isvar(char **, char **, int);
@@ -622,7 +607,7 @@ founddef(char *defstr, int blkid, int expctr, int hasval, int elen)
 static int
 expandvals(char *cmdp, char *valp, char *bp)
 {
-	char	 excbuf[BUFSIZE], argbuf[BUFSIZE];
+	char	 argbuf[BUFSIZE];
 	char	 contbuf[BUFSIZE], varbuf[BUFSIZE];
 	char	*argp, *endp, *p, *v, *s = " ";
 	char	*regs;
@@ -661,7 +646,6 @@ expandvals(char *cmdp, char *valp, char *bp)
 				*p = '\0';		
 			}
 			endp = p + 1;
-			excbuf[0] = '\0';
 			varbuf[0] = '\0';
 			contbuf[0] = '\0';			
 			sizof = sizeof(varbuf);

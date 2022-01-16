@@ -6,16 +6,7 @@
  * Help functions for Mg 2
  */
 
-#include <sys/queue.h>
-#include <signal.h>
-#include <stdio.h>
-#include <string.h>
-
-#include "def.h"
-#include "funmap.h"
-#include "kbd.h"
-#include "key.h"
-#include "macro.h"
+#include "config.h"
 
 static int	showall(struct buffer *, KEYMAP *, char *);
 static int	findbind(KEYMAP *, PF, char *, size_t);

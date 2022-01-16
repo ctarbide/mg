@@ -9,12 +9,7 @@
  * are all command processors.
  */
 
-#include <sys/queue.h>
-#include <ctype.h>
-#include <signal.h>
-#include <stdio.h>
-
-#include "def.h"
+#include "config.h"
 
 /*
  * Display a bunch of useful information about the current location of dot.

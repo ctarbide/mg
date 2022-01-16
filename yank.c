@@ -6,13 +6,7 @@
  *	kill ring functions
  */
 
-#include <sys/queue.h>
-#include <signal.h>
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-
-#include "def.h"
+#include "config.h"
 
 #define KBLOCK	 8192		/* Kill grow.                    */
 

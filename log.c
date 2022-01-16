@@ -37,24 +37,7 @@
  * I don't experience this bug. Just note it for future investigation.
  */
 
-#include <sys/queue.h>
-#include <sys/stat.h>
-#include <ctype.h>
-#include <fcntl.h>
-#include <signal.h>
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-#include <unistd.h>
-#include <stdarg.h>
-
-#include "def.h"
-#include "key.h"
-#include "kbd.h"
-#include "funmap.h"
-#include "chrdef.h"
-
-#include "log.h"
+#include "config.h"
 
 static char	*mglogfiles_create(FILE **, char *);
 static int	 mglog_lines(PF);

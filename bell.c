@@ -11,13 +11,7 @@
  * Control how mg communicates with the user.
  */
 
-#include <sys/queue.h>
-#include <signal.h>
-#include <stdio.h>
-#include <unistd.h>
-
-#include "def.h"
-#include "macro.h"
+#include "config.h"
 
 void
 bellinit(void)

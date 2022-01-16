@@ -8,14 +8,7 @@
  * There are all sorts of word mode commands.
  */
 
-#include <sys/queue.h>
-#include <signal.h>
-#include <errno.h>
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-
-#include "def.h"
+#include "config.h"
 
 RSIZE	countfword(void);
 int	grabword(char **);
@@ -84,8 +77,8 @@ transposeword(int f, int n)
 	int		 tmp2_w_dotline = 0;
 	int		 tmp1_w_doto;
 	int		 i;		/* start-of-line space counter */
-	int		 ret, s;
-	int		 newline;
+        int		 ret, s;
+        int		 nline; /* 'newline' was defined somewhere */
 	int		 leave = 0;
 	int		 tmp_len;
 	char		*word1 = NULL;
@@ -122,7 +115,7 @@ transposeword(int f, int n)
 
 	while (n-- > 0) {
 		i = 0;
-		newline = 0;
+		nline = 0;
 
 		tmp1_w_doto = curwp->w_doto;
 		tmp1_w_dotline = curwp->w_dotline;
@@ -138,9 +131,9 @@ transposeword(int f, int n)
 				break;
 			}
 			if (curwp->w_doto == 0) {
-				newline = 1;
+				nline = 1;
 				i = 0;
-			} else if (newline)
+			} else if (nline)
 				i++;
 		}
 		if (leave) {
@@ -171,7 +164,7 @@ transposeword(int f, int n)
 		for (chr = word2; *chr != '\0'; ++chr)
 			linsert(1, *chr);
 
-		if (newline)
+		if (nline)
 			tmp2_w_doto = i;
 
 		curwp->w_doto = tmp2_w_doto;

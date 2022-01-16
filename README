@@ -1,3 +1,21 @@
+
+This is a fork of https://github.com/hboetes/mg.  The canonical source
+for this version is at https://github.com/ctarbide/mg.
+
+Changes:
+
+    - completely new Makefile, easier to customize and maintain
+
+    - include relevant code and headers from libbsd
+
+Just type 'make' or 'bmake' to build, there is also a 'make install'
+using ${HOME}/local as prefix.
+
+The original README follows:
+
+****************************************************************
+
+
 [This is an edited version of the original mg README, updated slightly to
 reflect changes in the last 20 years.]
 

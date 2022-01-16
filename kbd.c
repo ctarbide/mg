@@ -6,18 +6,7 @@
  *	Terminal independent keyboard handling.
  */
 
-#include <sys/queue.h>
-#include <signal.h>
-#include <stdio.h>
-
-#include "def.h"
-#include "kbd.h"
-#include "key.h"
-#include "macro.h"
-
-#ifdef  MGLOG
-#include "log.h"
-#endif
+#include "config.h"
 
 #define METABIT 0x80
 

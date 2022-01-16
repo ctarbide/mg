@@ -2,15 +2,7 @@
 
 /* This file is in the public domain */
 
-#include <sys/queue.h>
-#include <signal.h>
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-
-#include "def.h"
-#include "funmap.h"
-#include "kbd.h"
+#include "config.h"
 
 /*
  * funmap structure: a list of functions and their command-names/#parameters.

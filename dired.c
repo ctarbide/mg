@@ -6,27 +6,7 @@
  * by Robert A. Larson
  */
 
-#include <sys/queue.h>
-#include <sys/resource.h>
-#include <sys/stat.h>
-#include <sys/time.h>
-#include <sys/types.h>
-#include <sys/wait.h>
-#include <ctype.h>
-#include <err.h>
-#include <errno.h>
-#include <fcntl.h>
-#include <limits.h>
-#include <signal.h>
-#include <stdarg.h>
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-#include <unistd.h>
-
-#include "def.h"
-#include "funmap.h"
-#include "kbd.h"
+#include "config.h"
 
 void		 dired_init(void);
 static int	 dired(int, int);

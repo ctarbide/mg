@@ -10,14 +10,7 @@
  * C code.
  */
 
-#include <sys/queue.h>
-#include <ctype.h>
-#include <signal.h>
-#include <stdio.h>
-
-#include "def.h"
-#include "funmap.h"
-#include "kbd.h"
+#include "config.h"
 
 /* Pull in from modes.c */
 extern int changemode(int, int, char *);

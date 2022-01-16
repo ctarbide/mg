@@ -11,14 +11,7 @@
  * The incremental search code and the query-replace code is by Rich Ellison.
  */
 
-#include <sys/queue.h>
-#include <ctype.h>
-#include <signal.h>
-#include <stdio.h>
-#include <string.h>
-
-#include "def.h"
-#include "macro.h"
+#include "config.h"
 
 #define SRCH_BEGIN	(0)	/* Search sub-codes.	 */
 #define SRCH_FORW	(-1)

@@ -6,14 +6,7 @@
  *	Keyboard macros.
  */
 
-#include <sys/queue.h>
-#include <signal.h>
-#include <stdio.h>
-#include <stdlib.h>
-
-#include "def.h"
-#include "key.h"
-#include "macro.h"
+#include "config.h"
 
 int inmacro = FALSE;	/* Macro playback in progess */
 int macrodef = FALSE;	/* Macro recording in progress */

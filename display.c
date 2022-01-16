@@ -11,16 +11,7 @@
  * pig.
  */
 
-#include <sys/queue.h>
-#include <ctype.h>
-#include <signal.h>
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-#include <term.h>
-
-#include "def.h"
-#include "kbd.h"
+#include "config.h"
 
 /*
  * A video structure always holds

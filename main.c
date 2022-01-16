@@ -6,32 +6,7 @@
  *	Mainline.
  */
 
-#include <sys/queue.h>
-#include <err.h>
-#include <limits.h>
-#include <locale.h>
-#include <signal.h>
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-#include <termios.h>
-#include <unistd.h>
-
-#if HAVE_PTY_H
-#include <pty.h>
-#include <utmp.h>
-#elif HAVE_UTIL_H
-#include <util.h>
-#endif
-
-#include "def.h"
-#include "kbd.h"
-#include "funmap.h"
-#include "macro.h"
-
-#ifdef  MGLOG
-#include "log.h"
-#endif
+#include "config.h"
 
 int		 thisflag;			/* flags, this command	*/
 int		 lastflag;			/* flags, last command	*/
