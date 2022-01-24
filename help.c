@@ -119,7 +119,7 @@ static int
 showall(struct buffer *bp, KEYMAP *map, char *prefix)
 {
 	KEYMAP	*newmap;
-	char	 buf[80], keybuf[16];
+	char	 buf[80], keybuf[100];
 	PF	 fun;
 	int	 c;
 
@@ -134,6 +134,7 @@ showall(struct buffer *bp, KEYMAP *map, char *prefix)
 		getkeyname(buf, sizeof(buf), c);
 		(void)snprintf(keybuf, sizeof(keybuf), "%s%s ", prefix, buf);
 		if (fun == NULL) {
+			/* TODO: keybuf was changed from [16] to [100], understand the impact */
 			if (showall(bp, newmap, keybuf) == FALSE)
 				return (FALSE);
 		} else {

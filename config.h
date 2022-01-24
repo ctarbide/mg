@@ -8,6 +8,10 @@
  * as is, with no warranty of any kind.
  */
 
+#ifndef _DEFAULT_SOURCE
+#define _DEFAULT_SOURCE
+#endif
+
 #ifndef _ISOC99_SOURCE
 #define _ISOC99_SOURCE
 #endif
@@ -57,7 +61,6 @@
 #include <limits.h>
 #include <time.h>
 
-#include <sys/cdefs.h>
 #include <assert.h>
 
 #include <ctype.h>
